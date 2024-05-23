@@ -1,0 +1,91 @@
+html, body {
+    margin: 5px 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2em;
+}
+
+header input {
+    width: 10%;
+    border: none;
+    height: 50px;
+}
+
+select{
+    padding: 0 .5em;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+header button {
+    padding: 1em;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+#generated-colors {
+    display: flex;
+    height: 75vh;
+    margin-top: 1em;
+}
+
+.generated-color {
+    height: 100%;
+    flex: 1;
+    color: transparent;
+}
+
+#generated-hexes {
+    display: flex;
+    margin-top: 1.5em;
+}
+
+.generated-hex{
+    margin: 0;
+    width: auto;
+    flex: 1;
+    text-align: center;
+}
+
+@media (max-width: 475px) {
+    header {
+        flex-direction: column;
+        align-items: center;;
+    }
+    
+    header input {
+        width: 40%;
+    }
+    
+    select {
+        padding: .5em;
+    }
+    
+    #generated-colors {
+        flex-direction: column;
+    }
+    
+    .generated-color {
+        color: white;
+        font-size: 16pt;;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        /* adding thick outline to see text withing */
+        text-shadow: 
+        #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, 
+        #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px ;
+    }
+    
+    #generated-hexes {
+        display: none;
+    }
+}
