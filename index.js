@@ -8,16 +8,21 @@ document.getElementById("generate-button").addEventListener("click", (e) => {
     generatedColorEl.innerHTML = ``
     generatedHexEl.innerHTML = ``
     getColor(numberOfColorsSelection.value);
+    document.getElementById("default-text").style.display = "none"
 });
 
 const getColor = (numOfColors) => {
     for (let i = 0; i < numOfColors; i++){
-        fetch(`https://www.thecolorapi.com/scheme?hex=${colorPicker.value.substr(1)}&mode=${modeSelectionEL.value}`)
-            .then(res => res.json())
-            .then(data  => {
-                renderColors(data.colors[i].hex)
-                renderHex(data.colors[i].hex)
-                })
+        try {
+            fetch(`https://www.thecolorapi.com/scheme?hex=${colorPicker.value.substr(1)}&mode=${modeSelectionEL.value}`)
+                .then(res => res.json())
+                .then(data  => {
+                    renderColors(data.colors[i].hex)
+                    renderHex(data.colors[i].hex)
+                    })
+        } catch (err) {
+            console.log(err)
+        }
     }
 }
 
