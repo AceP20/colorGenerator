@@ -2,6 +2,7 @@ html, body {
     margin: 15px 0;
     padding: 0;
     background-color: whitesmoke;
+    min-width: 200px;
 }
 
 header {
@@ -12,12 +13,12 @@ header {
     border-bottom: 5px double black;
 }
 
-header i {
+.logo {
     margin: 0;
     padding: 0;
     position: absolute;
-    left: 40px;
-    top: 55px;
+    left: 10px;
+    top: 10px;
 }
 
 header input {
@@ -142,7 +143,8 @@ select{
 @media (max-width: 475px) {
     header {
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
+        gap: 1em;
     }
     
     header input {
@@ -180,5 +182,3 @@ select{
     padding: 12px 50px;
   }
 }
-
-/* CSS */
